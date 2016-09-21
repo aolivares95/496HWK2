@@ -44,7 +44,15 @@ namespace _496Assin2
 
         int CompareTo(Rank rankObj)
         {
+            if (this.val < rankObj.val)
+            {
+                return -1;
+            }
 
+            if (this.val > rankObj.val)
+            {
+                return 1;
+            }
             return 0;
         }
      
