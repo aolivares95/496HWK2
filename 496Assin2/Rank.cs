@@ -12,7 +12,7 @@ namespace _496Assin2
         private int val;
         private string name;
 
-        static List<Rank> values= new List<Rank> { };
+        static List<Rank> values = new List<Rank> { };
 
         public Rank(string ns, int nv, string nn)
         {
@@ -23,8 +23,6 @@ namespace _496Assin2
 
         static Rank()
         {
-
-            Rank ONE = new Rank("1", 1, "One");
             Rank TWO = new Rank("2", 2, "Two");
             Rank THREE = new Rank("3", 3, "Three");
             Rank FOUR = new Rank("4", 4, "Four");
@@ -38,9 +36,20 @@ namespace _496Assin2
             Rank QUEEN = new Rank("Q", 12, "Queen");
             Rank KING = new Rank("K",13,"King");
             Rank ACE = new Rank("A", 14, "Ace");
+            values.Add(TWO);
+            values.Add(THREE);
+            values.Add(FOUR);
+            values.Add(FIVE);
+            values.Add(SIX);
+            values.Add(SEVEN);
+            values.Add(EIGHT);
+            values.Add(NINE);
+            values.Add(TEN);
+            values.Add(JACK);
+            values.Add(QUEEN);
+            values.Add(KING);
+            values.Add(ACE);
         }
-
-        
 
         int CompareTo(Rank rankObj)
         {
@@ -55,6 +64,21 @@ namespace _496Assin2
             }
             return 0;
         }
+
+        string GetSymbol()
+        {
+            return this.symbol;
+        }
+
+        string GetName()
+        {
+
+            return this.name;
+        }
      
+        string ToString()
+        {
+            return this.name;
+        }
     }
 }
