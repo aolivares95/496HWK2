@@ -43,9 +43,49 @@ namespace _496Assin2
 
         public int GetDeckSize()
         {
+            
             return deckSize;
         }
-    
 
+        public bool IsEmpty()
+        {
+            if (deck.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void Shuffle()
+        {
+            List<Card> temp = deck;
+            int temprnd;
+            int count=0;
+
+            deck.Clear();
+
+            while(count<=temp.Count)
+            {
+                temprnd=rnd.Next(0, temp.Count);
+
+                if (!deck.Contains(temp[temprnd]))
+                {
+                    this.AddCard(temp[temprnd]);
+                    count++;
+                }
+            }
+        }
+
+        public void RestoreDeck()
+        {
+            Card temp;
+
+            for (int i = deck.Count; i <= 52; i++)
+            {
+                temp= new Card();
+                this.AddCard(temp);
+            }
+        }
+        
     }
 }
