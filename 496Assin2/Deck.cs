@@ -6,19 +6,26 @@ using System.Threading.Tasks;
 
 namespace _496Assin2
 {
+
     class Deck
     {
+        private int deckSize;
         static List<Card> deck;
         Random rnd = new Random();
         
-        public Deck()
+        public Deck(int deckSize2)
         {
             deck= new List<Card> { };
+            deckSize = deckSize2;
         }
 
         public void AddCard(Card newCard)
         {
-            deck.Add(newCard);
+            if (deck.Count < deckSize)
+            {
+                deck.Add(newCard);
+            }
+            
         }
 
         public Card DealOne()
@@ -28,5 +35,17 @@ namespace _496Assin2
             deck.RemoveAt(rnd1);
             return temp;
         }
+
+        public int GetCardsRemaining()
+        {
+            return deck.Count;
+        }
+
+        public int GetDeckSize()
+        {
+            return deckSize;
+        }
+    
+
     }
 }
