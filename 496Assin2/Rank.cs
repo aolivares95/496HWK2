@@ -11,8 +11,29 @@ namespace _496Assin2
         private string symbol;
         private int val;
         private string name;
+        
 
-        static List<Rank> values = new List<Rank> { };
+        public static Rank TWO = new Rank();
+        public static Rank THREE = new Rank();
+        public static Rank FOUR = new Rank();
+        public static Rank FIVE = new Rank();
+        public static Rank SIX = new Rank();
+        public static Rank SEVEN = new Rank();
+        public static Rank EIGHT = new Rank();
+        public static Rank NINE = new Rank();
+        public static Rank TEN = new Rank();
+        public static Rank JACK = new Rank();
+        public static Rank QUEEN = new Rank();
+        public static Rank KING = new Rank();
+        public static Rank ACE = new Rank();
+
+        public static List<Rank> values = new List<Rank> { };
+
+        public Rank()
+        {
+
+
+        }
 
         public Rank(string ns, int nv, string nn)
         {
@@ -20,22 +41,24 @@ namespace _496Assin2
             val = nv;
             name = nn;
         }
-
+        
         static Rank()
         {
-            Rank TWO = new Rank("2", 2, "Two");
-            Rank THREE = new Rank("3", 3, "Three");
-            Rank FOUR = new Rank("4", 4, "Four");
-            Rank FIVE = new Rank("5", 5, "Five");
-            Rank SIX = new Rank("6", 6, "Six");
-            Rank SEVEN = new Rank("7", 7, "Seven");
-            Rank EIGHT = new Rank("8", 8, "Eight");
-            Rank NINE = new Rank("9", 9, "Nine");
-            Rank TEN = new Rank("10", 10, "Ten");
-            Rank JACK = new Rank("J", 11, "Eleven");
-            Rank QUEEN = new Rank("Q", 12, "Queen");
-            Rank KING = new Rank("K",13,"King");
-            Rank ACE = new Rank("A", 14, "Ace");
+
+            TWO = new Rank("2", 2, "Two");
+            THREE = new Rank("3", 3, "Three");
+            FOUR = new Rank("4", 4, "Four");
+            FIVE = new Rank("5", 5, "Five");
+            SIX = new Rank("6", 6, "Six");
+            SEVEN = new Rank("7", 7, "Seven");
+            EIGHT = new Rank("8", 8, "Eight");
+            NINE = new Rank("9", 9, "Nine");
+            TEN = new Rank("10", 10, "Ten");
+            JACK = new Rank("J", 11, "Eleven");
+            QUEEN = new Rank("Q", 12, "Queen");
+            KING = new Rank("K",13,"King");
+            ACE = new Rank("A", 14, "Ace");
+
             values.Add(TWO);
             values.Add(THREE);
             values.Add(FOUR);
@@ -50,8 +73,8 @@ namespace _496Assin2
             values.Add(KING);
             values.Add(ACE);
         }
-
-        int CompareTo(Rank rankObj)
+       
+        public int CompareTo(Rank rankObj)
         {
             if (this.val < rankObj.val)
             {
@@ -65,18 +88,18 @@ namespace _496Assin2
             return 0;
         }
 
-        string GetSymbol()
+        public string GetSymbol()
         {
             return this.symbol;
         }
 
-        string GetName()
+        public string GetName()
         {
 
             return this.name;
         }
      
-        string ToString()
+        public string ToString()
         {
             return this.name;
         }
