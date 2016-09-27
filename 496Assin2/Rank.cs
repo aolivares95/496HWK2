@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _496Assin2
 {
-    class Rank
+    public class Rank
     {
-        private string symbol;
-        private int val;
-        private string name;
+        public string symbol;
+        public int val;
+        public string name;
         
 
         public static Rank TWO = new Rank();
@@ -28,7 +28,7 @@ namespace _496Assin2
         public static Rank ACE = new Rank();
 
         public static List<Rank> values = new List<Rank> { };
-
+        
         public Rank()
         {
 
@@ -99,7 +99,7 @@ namespace _496Assin2
             return this.name;
         }
      
-        public string ToString()
+        public override string ToString()
         {
             return this.name;
         }
