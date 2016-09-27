@@ -36,9 +36,58 @@ namespace _496Assin2
         {
             foreach(Card i in myHand)
             {
-                sum = i.GetRank().val;
+                sum += i.GetRank().val;
             }
             return sum;
+        }
+
+        public bool ContainsCard(Card aCard)
+        {
+            if (myHand.Contains(aCard))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void DiscardHand()
+        {
+            myHand.Clear();
+        }
+
+        public int FindCard(Card nuCard)
+        {
+            return myHand.IndexOf(nuCard);
+        }
+
+        public Card GetCardAtIndex(int ind){
+            return myHand[ind];
+            }
+
+        public int GetNumberOfCards()
+        {
+            return myHand.Count;
+        }
+
+        public bool IsEmpty()
+        {
+            if (myHand.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public Card RemoveCard(Card nuCard)
+        {
+            myHand.Remove(nuCard);
+            return nuCard;
+        }
+
+        public Card RemoveCard(int cind)
+        {
+            myHand.RemoveAt(cind);
+            return myHand[cind];
         }
     }
 }
