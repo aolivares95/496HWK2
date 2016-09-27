@@ -6,44 +6,23 @@ using System.Threading.Tasks;
 
 namespace _496Assin2
 {
-    class Hand
+    public abstract class Hand
     {
-        List<Card> myHand;
+        public Deck deck1 = new Deck(52);
         public int sum=0;
 
         public void AddCard(Card newCard)
         {
-            myHand.Add(newCard);
+            deck1.AddCard(newCard);
         }
 
-        public int CompareTo(Hand otherHand)
-        {
-            if(this.EvaluateHand()> otherHand.EvaluateHand())
-            {
-                return 1;
-            }
-
-            if (this.EvaluateHand() < otherHand.EvaluateHand())
-            {
-                return -1;
-            }
-
-            return 0;
-
-        }
-
-        public int EvaluateHand()
-        {
-            foreach(Card i in myHand)
-            {
-                sum += i.GetRank().val;
-            }
-            return sum;
-        }
+       public abstract int CompareTo(Hand otherHand);
+    
+       public abstract int EvaluateHand();
 
         public bool ContainsCard(Card aCard)
         {
-            if (myHand.Contains(aCard))
+            if (deck1.deck.Contains(aCard))
             {
                 return true;
             }
@@ -53,26 +32,27 @@ namespace _496Assin2
 
         public void DiscardHand()
         {
-            myHand.Clear();
+            deck1.deck.Clear();
         }
 
         public int FindCard(Card nuCard)
         {
-            return myHand.IndexOf(nuCard);
+            
+            return deck1.deck.IndexOf(nuCard);
         }
 
         public Card GetCardAtIndex(int ind){
-            return myHand[ind];
+            return deck1.deck[ind];
             }
 
         public int GetNumberOfCards()
         {
-            return myHand.Count;
+            return deck1.deck.Count;
         }
 
         public bool IsEmpty()
         {
-            if (myHand.Count == 0)
+            if (deck1.deck.Count == 0)
             {
                 return true;
             }
@@ -80,14 +60,23 @@ namespace _496Assin2
         }
         public Card RemoveCard(Card nuCard)
         {
-            myHand.Remove(nuCard);
+            deck1.deck.Remove(nuCard);
             return nuCard;
         }
 
         public Card RemoveCard(int cind)
         {
-            myHand.RemoveAt(cind);
-            return myHand[cind];
+            deck1.deck.RemoveAt(cind);
+            return deck1.deck[cind];
+        }
+       public override string ToString()
+        {
+            string sum = "";
+            foreach (Card i in deck1.deck)
+            {
+                sum = sum + " " + i;
+            }
+            return sum;
         }
     }
 }
