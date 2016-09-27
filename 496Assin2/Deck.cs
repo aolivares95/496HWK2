@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace _496Assin2
 {
 
-    class Deck
+    public class Deck
     {
-        private int deckSize;
-        static List<Card> deck;
+        public int deckSize;
+        public List<Card> deck;
         Random rnd = new Random();
         
         public Deck(int deckSize2)
