@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace _496Assin2
 {
-    class Card
+    public class Card
     {
-       private Suit mySuit;
-       private Rank myRank;
+       
+       public Suit mySuit;
+       public Rank myRank;
+       Random rnd = new Random();
 
         public Card(Suit newSuit, Rank newRank)
         {
             mySuit = newSuit;
            myRank = newRank;
+        }
+
+        public Card()
+        {
+            myRank = Rank.values[rnd.Next(0,13)];
+            mySuit = Suit.values[rnd.Next(0, 3)];
         }
 
 
