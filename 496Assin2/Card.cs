@@ -11,18 +11,20 @@ namespace _496Assin2
        
        public Suit mySuit;
        public Rank myRank;
-       Random rnd = new Random();
+       static Random rnd = new Random();
+       public int rndval = rnd.Next(0, 13);
+       public int rndval2 = rnd.Next(0, 3);
 
         public Card(Suit newSuit, Rank newRank)
         {
-            mySuit = newSuit;
+           mySuit = newSuit;
            myRank = newRank;
         }
 
         public Card()
         {
-            myRank = Rank.values[rnd.Next(0,13)];
-            mySuit = Suit.values[rnd.Next(0, 3)];
+            myRank = Rank.values[rndval];
+            mySuit = Suit.values[rndval2];
         }
 
 
